@@ -7,7 +7,7 @@ const int maxCartes = 52;
 class Donnees
 {
 	public:
-		Carte LesCartes[56];
+		Carte LesCartes[maxCartes];
 		Donnees();
 };
 

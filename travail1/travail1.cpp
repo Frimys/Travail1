@@ -8,9 +8,11 @@
 using namespace std;
 
 Donnees leJeu;
+Joueur lesJoueurs[2];
 
 void InitialiserJoueurs();
 void Jouer();
+
 
 int main() 
 {
@@ -32,4 +34,11 @@ void Jouer()
 
 void InitialiserJoueurs()
 {
+	string nomJoueur;
+	cout << "\n Nom du premier joueur? \n";
+	cin >> nomJoueur;
+	lesJoueurs[0].SetNom(nomJoueur);
+	cout << "\n Nom du deuxième joueur? \n";
+	cin >> nomJoueur;
+	lesJoueurs[1].SetNom(nomJoueur);
 }

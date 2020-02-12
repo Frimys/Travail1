@@ -12,7 +12,7 @@ private:
 	string nom;
 	int nombreVictoires;
 	int nombreDefaites;
-	Carte* mainDuJoueur[26];
+	Carte* mainDuJoueur[maxCartesAJouer];
 
 public:
 	Joueur();
