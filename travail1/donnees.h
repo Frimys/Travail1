@@ -11,6 +11,8 @@ class Donnees
 		Carte LesCartes[maxCartes];
 		Joueur Joueur1;
 		Joueur Joueur2;
+private:
+	void InitialiserCartes();
 
 };
 

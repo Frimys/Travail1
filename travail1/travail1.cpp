@@ -8,7 +8,6 @@
 using namespace std;
 
 Donnees leJeu;
-Joueur lesJoueurs[2];
 int AfficherResultatJoueur(Joueur);
 void MelangerLesCartes();
 void DistribueLesCartes(int anbCartesJoueurs);
@@ -36,7 +35,7 @@ void Jouer()
 {
 	int nbCartesJoueurs = 0;
 	bool BoolCarte = false;
-
+	
 
 	while(BoolCarte == false)
 	{
@@ -44,7 +43,7 @@ void Jouer()
 		cin >> nbCartesJoueurs;
 		if (nbCartesJoueurs > maxCartesAJouer)
 		{
-			cout << "Le Nombre de cartes choisi doit être inferieur ou égale à 26";
+			cout << "Le Nombre de cartes choisi doit etre inferieur ou egale à 26";
 		}
 		else
 		{
@@ -64,10 +63,10 @@ void InitialiserJoueurs()
 	string nomJoueur;
 	cout << "\n Nom du premier joueur? \n";
 	cin >> nomJoueur;
-	lesJoueurs[0].SetNom(nomJoueur);
-	cout << "\n Nom du deuxième joueur? \n";
+	leJeu.Joueur1.SetNom(nomJoueur);
+	cout << "\n Nom du deuxieme joueur? \n";
 	cin >> nomJoueur;
-	lesJoueurs[1].SetNom(nomJoueur);
+	leJeu.Joueur2.SetNom(nomJoueur);
 }
 
 void MelangerLesCartes()
@@ -122,7 +121,7 @@ void quiAGagner(int aresultatJoueur1, int aresultatJoueur2)
 	if (aresultatJoueur1 == aresultatJoueur2)
 	{
 		/* cas égalité*/
-		cout << "C'ette partie est nulle! \n";
+		cout << "Cette partie est nulle! \n";
 	}
 	if (aresultatJoueur1 < aresultatJoueur2)
 	{
@@ -134,7 +133,7 @@ void quiAGagner(int aresultatJoueur1, int aresultatJoueur2)
 	else
 	{
 		/* joueur 1 gagne*/
-		cout << "Bravo au joueur " << leJeu.Joueur2.getNomJoueur() << "! \n";
+		cout << "Bravo au joueur " << leJeu.Joueur1.getNomJoueur() << "! \n";
 		leJeu.Joueur1.AjouterVictoire();
 		leJeu.Joueur2.AjouterDefaite();
 
