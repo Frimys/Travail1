@@ -21,5 +21,9 @@ public:
 	void AjouterDefaite();
 	void AjouterUneCarte(Carte*);
 	void EnleverLesCartes();
+	const int getNombreVictoires();
+	const int getNombreDefaites();
+	const string getNomJoueur();
+	Carte* GetCarteJoueurTableau(int);
 };
 #endif

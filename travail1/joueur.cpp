@@ -4,7 +4,7 @@ Joueur::Joueur()
 	nom = "";
 	nombreVictoires = 0;
 	nombreDefaites = 0;
-	for (int i = 0; i < 26; i++)
+	for (int i = 0; i < maxCartesAJouer; i++)
 	{
 		mainDuJoueur[i] = NULL;
 	}
@@ -25,7 +25,7 @@ void Joueur::AjouterUneCarte(Carte* aCartePigee)
 {
 	bool carteAjoutee = false;
 	int nbCartes = 0;
-		while (carteAjoutee = false && nbCartes < 26)
+		while (carteAjoutee == false)
 		{
 		if (mainDuJoueur[nbCartes] == NULL)
 			{
@@ -40,8 +40,27 @@ void Joueur::AjouterUneCarte(Carte* aCartePigee)
 }
 void Joueur::EnleverLesCartes()
 {
-	for (int i = 0; i < 26; i++)
+	for (int i = 0; i < maxCartesAJouer; i++)
 	{
 		mainDuJoueur[i] = NULL;
 	}
+}
+
+const int Joueur::getNombreVictoires()
+{
+	return nombreVictoires;
+}
+
+const int Joueur::getNombreDefaites()
+{
+	return nombreDefaites;
+}
+
+const string Joueur::getNomJoueur()
+{
+	return nom;
+}
+Carte* Joueur::GetCarteJoueurTableau(int indice)
+{
+	return mainDuJoueur[indice];
 }
